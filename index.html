@@ -6,6 +6,42 @@
 </head>
 <body>
   <script>
+    function getCompChoice() {
+    getCompChoice =  Math.random();
+    if(getCompChoice < .33) {return "Rock"}
+    else if(getCompChoice <= .66) {return "Paper"}
+    else {return "Scissors"}
+   }
+
+   function playRound(playerSelection, compSelection) {
+    if (playerSelection == "Rock" && compSelection == "Paper")
+   { return 'You Lose! Paper beats Rock'}
+   else if (playerSelection == "Paper" && compSelection == "Scissors")
+   { return 'You Lose! Scissors beats Paper'}
+   else if (playerSelection == "Scissors" && compSelection == "Rock")
+   { return 'You Lose! Rock beats Scissors'}
+   else if (playerSelection === compSelection) 
+   {return 'It is a Tie!'}
+   else{return 'You Win!!'}
+   
+   
+   }
+  const playerSelection = prompt('Choose your attack!');
+  const compSelection = getCompChoice();
+  console.log("You played " + playerSelection);
+  console.log("Computer played " + compSelection);
+  console.log(playRound(playerSelection, compSelection));
+
+
+  let playerPoints = 0;
+  let compPoints = 0;
+
+  function game() {
+  for (let i = 0; i < 5; i++) {
+    playRound();
+}
+
+}
 
   </script>
 </body>
