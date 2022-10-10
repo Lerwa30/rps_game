@@ -14,15 +14,21 @@
    }
 
    function playRound(playerSelection, compSelection) {
-    if (playerSelection == "Rock" && compSelection == "Paper")
+    if (playerSelection.toLowerCase() == "rock" && compSelection.toLowerCase() == "paper")
    { return 'You Lose! Paper beats Rock'}
-   else if (playerSelection == "Paper" && compSelection == "Scissors")
+   else if (playerSelection.toLowerCase() == "paper" && compSelection.toLowerCase() == "scissors")
    { return 'You Lose! Scissors beats Paper'}
-   else if (playerSelection == "Scissors" && compSelection == "Rock")
+   else if (playerSelection.toLowerCase() == "scissors" && compSelection.toLowerCase() == "rock")
    { return 'You Lose! Rock beats Scissors'}
-   else if (playerSelection === compSelection) 
+   if (playerSelection.toLowerCase() == "paper" && compSelection.toLowerCase() == "rock")
+   { return 'You Win! Paper beats Rock'}
+   else if (playerSelection.toLowerCase() == "scissors" && compSelection.toLowerCase() == "paper")
+   { return 'You Win! Scissors beats Paper'}
+   else if (playerSelection.toLowerCase() == "rock" && compSelection.toLowerCase() == "scissors")
+   { return 'You Win! Rock beats Scissors'}
+   else if (playerSelection.toLowerCase() === compSelection.toLowerCase()) 
    {return 'It is a Tie!'}
-   else{return 'You Win!!'}
+   else{return 'Error'}
    
    
    }
@@ -42,6 +48,7 @@
 }
 
 }
+
 
   </script>
 </body>
